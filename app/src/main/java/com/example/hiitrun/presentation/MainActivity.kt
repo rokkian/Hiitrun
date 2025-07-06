@@ -116,7 +116,7 @@ fun WearApp(location: Location?, onGetLocationClick: () -> Unit) {
             // For simplicity, we rely on onGetLocationClick to re-trigger the check in MainActivity.
             // (context as? MainActivity)?.sendBroadcast(android.content.Intent("LOCATION_PERMISSION_GRANTED"))
             // Call onGetLocationClick directly if permissions were granted by this request.
-             onGetLocationClick()
+            onGetLocationClick()
 
         } else {
             // Permission Denied.
@@ -169,6 +169,7 @@ fun WearApp(location: Location?, onGetLocationClick: () -> Unit) {
                         style = MaterialTheme.typography.button,
                         textAlign = TextAlign.Center // Ensure text is centered if it wraps
                     )
+
                 }
             }
         }
