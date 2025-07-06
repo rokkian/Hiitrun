@@ -80,10 +80,10 @@ class MainActivity : ComponentActivity() {
                 this,
                 Manifest.permission.ACCESS_FINE_LOCATION
             ) == PackageManager.PERMISSION_GRANTED &&
-                    ContextCompat.checkSelfPermission(
-                        this,
-                        Manifest.permission.ACCESS_COARSE_LOCATION
-                    ) == PackageManager.PERMISSION_GRANTED -> {
+            ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED -> {
                 fetchLastLocation()
             }
             else -> {
@@ -164,7 +164,12 @@ fun WearApp(location: Location?, onGetLocationClick: () -> Unit) {
                         )
                     }
                 }) {
-                    Text(text = stringResource(R.string.get_location_button))
+                    Text(
+                        text = stringResource(R.string.get_location_button),
+                        style = MaterialTheme.typography.button,
+                        textAlign = TextAlign.Center // Ensure text is centered if it wraps
+                    )
+
                 }
             }
         }
